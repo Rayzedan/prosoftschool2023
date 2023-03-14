@@ -23,8 +23,8 @@ int main()
 	//Сравнение с char
 	std::cout << (test <= '1') << (test >= '3') << (test == '2') << (test != '3') << '\n';
 
-	//Сравнение строк
-	//std::cout << (testStr <= ) << (testDouble >= 1.0) << (testDouble == 1.0) << (testDouble != 2.0) << '\n';
+	//Сравнение между NewB
+	std::cout << (testStr <= testStr1) << (testStr >= testStr1) << (testStr == testStr1) << (testStr != testStr1) << '\n';
 
 	std::cout << "All tests passed successfully!" << '\n';
 	return 0;
