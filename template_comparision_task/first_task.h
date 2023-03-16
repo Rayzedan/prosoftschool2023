@@ -1,17 +1,18 @@
-#include <string>
+﻿#include <string>
 #include <string_view>
+#include <iostream>
 
 template<typename T>
 class OtherComparisionOperators {
 public:
 	template <typename A>
 	constexpr bool operator==(const A& other) const {
-		return !(Value() > other) && !(Value() < other);
+        return !(Value() < other) && !(Value() > other);
 	}
 
 	template <typename A>
 	constexpr bool operator!=(const A& other) const {
-		return (Value() > other) || (Value() < other);
+        return ((Value() < other) || (Value() > other));
 	}
 	template <typename A>
 	constexpr bool operator<=(const A& other) const {
@@ -55,45 +56,45 @@ public:
 	// Операторы сравнения с int
 	bool operator<(const int other) const
 	{
-		return m_a < other;
+        return (m_a < other) && (m_b < other);
 	}
 
 	bool operator>(const int other) const
 	{
-		return m_a > other;
+        return (m_a > other) && (m_b > other);
 	}
 
 	// Операторы сравнения с double
 	bool operator<(const double other) const
 	{
-		return m_a < static_cast<int>(other);
+        return (m_a < static_cast<int>(other) && m_b < static_cast<int>(other));
 	}
 
 	bool operator>(const double other) const
 	{
-		return m_a > static_cast<int>(other);
+        return (m_a > static_cast<int>(other) && m_b > static_cast<int>(other));
 	}
 
 	// Операторы сравнения с char
 	bool operator<(const char other) const
 	{
-		return m_a < static_cast<int>(other);
+        return (m_a < static_cast<int>(other) && m_b < static_cast<int>(other));
 	}
 
 	bool operator>(const char other) const
 	{
-		return m_a > static_cast<int>(other);
+        return (m_a > static_cast<int>(other) && m_b > static_cast<int>(other));
 	}
 
 	// Операторы сравнения с float
 	bool operator<(const float other) const
 	{
-		return m_a < static_cast<int>(other);
+        return (m_a < static_cast<int>(other) && m_b < static_cast<int>(other)) ;
 	}
 
 	bool operator>(const float other) const
 	{
-		return m_a > static_cast<int>(other);
+        return (m_a > static_cast<int>(other) && m_b > static_cast<int>(other));
 	}
 
 private:

@@ -1,18 +1,19 @@
-#include <iostream>
+﻿#include <iostream>
+#include <cassert>
 #include "first_task.h"
 
 int main() 
 {
-	NewA test(1, 4);
-	NewA test1(2, 1);
+    NewA test(1, 2);
+    NewA test1(3, 3);
 	NewB testStr("abc");
 	NewB testStr1("cba");
 
 	//Сравнение между NewA
-	std::cout << (test <= test1) << (test >= test1) << (test == test1) << (test != test1) << '\n';
+    std::cout << (test <= test1) << (test >= test1) << (test == test1) << (test != test1) << '\n';
 
 	//Сравнение с int
-	std::cout << (test <= 1) << (test >= 1) << (test == 1) << (test != 2) << '\n';
+    std::cout << (test <= 1) << (test >= 1) << (test == 1) << (test != 3) << '\n';
 
 	//Сравнение с float
 	std::cout << (test <= 1.0f) << (test >= 1.0f) << (test == 1.0f) << (test != 2.0f) << '\n';
